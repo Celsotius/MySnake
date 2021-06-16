@@ -1,0 +1,13 @@
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.exe
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.deps.json
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.runtimeconfig.json
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.runtimeconfig.dev.json
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.dll
+C:\Files\GeekBrains\snake\Snake\bin\Debug\netcoreapp3.1\Snake.pdb
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.AssemblyInfoInputs.cache
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.AssemblyInfo.cs
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.csproj.CoreCompileInputs.cache
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.dll
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.pdb
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.genruntimeconfig.cache
+C:\Files\GeekBrains\snake\Snake\obj\Debug\netcoreapp3.1\Snake.csproj.AssemblyReference.cache
