@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic; //Необходимо для использования списков
+
 
 namespace Snake
 {
@@ -13,6 +15,22 @@ namespace Snake
             p2.Draw();
 
             Console.ReadLine();
+
+            //Создание объекта класса лист (нумерованный)
+            List<int> numList = new List<int>();
+
+            //Добавление элементов в созданный объект
+            numList.Add(5);
+            numList.Add(1);
+            numList.Add(2);
+
+            //Запись элементов списка в переменные, используя порядковые номера
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
+
+            Console.WriteLine(x);
+
         }
     }
 }
