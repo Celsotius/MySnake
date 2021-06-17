@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aEN5E/WtvjUiUPoLOHzOKMzrdriaVIUrTjLI4qJ9kQ0ZRneDosbTH+8zaKDnvPExhI1GFxBoy99zjx75DN2zgQ==",
+  "dgSpecHash": "XNWODNS6ik8feq6xpBDgl/RoxLTRlHzGVt35yDUR99lswIWCJTB+zjKIieBMceXWar2MzdZy3cZmY6A277LpDw==",
   "success": true,
-  "projectFilePath": "C:\\Files\\GeekBrains\\Projects\\Snake\\My\\Snake.csproj",
+  "projectFilePath": "C:\\Users\\Александр Кузнецов\\Source\\Repos\\MySnake\\Snake\\My\\Snake.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
