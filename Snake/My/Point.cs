@@ -10,13 +10,28 @@ namespace Snake
         public int y;
         public char sym;
 
-        public Point(int x, int y, char sym)
+        public Point(int x, int y, char sym) //Конструктор класса вызываемый, при вызове формата Point p = new Point(arg1, arg2, arg3)
         {
             this.x = x;
             this.y = y;
             this.sym = sym;
         }
 
+        public Point(Point p) //Конструктор класса вызываемый, при вызове формата Point p = new Point(arg1)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+       //Метод для сдвигания точки в заданном направлении
+       public void Move(int offset, Direction direction)
+        {
+            if (direction == Direction.RIGHT) x += offset;
+            else if (direction == Direction.LEFT) x -= offset;
+            else if (direction == Direction.DOWN) y += offset;
+            else if (direction == Direction.UP) y -= offset;
+        }
         public void Draw()
         {
             Console.SetCursorPosition(x, y);

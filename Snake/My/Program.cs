@@ -8,29 +8,34 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 2, '*');
-            p1.Draw();
+            
+            int AreaLength = 20;
+            string lvlName = "LEVEL 1";
 
-            Point p2 = new Point(3, 4, '#');
-            p2.Draw();
+            HorizontalLine UpLine = new HorizontalLine(0, AreaLength, 0, '-'); //Создание объекта класса UЛиния
+            UpLine.Draw();
+
+            HorizontalLine DownLine = new HorizontalLine(0, AreaLength, 10, '-'); //Создание объекта класса Линия
+            DownLine.Draw();
+
+            VerticalLine LeftLine = new VerticalLine(0, 1, 9, '|');
+            LeftLine.Draw();
+
+            VerticalLine RightLine = new VerticalLine(AreaLength, 1, 9, '|');
+            RightLine.Draw();
+
+            //Напись ЛВЛ
+            //Console.SetCursorPosition(7, 5);
+            //Console.WriteLine(lvlName);
+            //Убрать надпись
+
+            //Отрисовка змейки
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
+            snake.Move();
 
             Console.ReadLine();
-
-            //Создание объекта класса лист (нумерованный)
-            List<int> numList = new List<int>();
-
-            //Добавление элементов в созданный объект
-            numList.Add(5);
-            numList.Add(1);
-            numList.Add(2);
-
-            //Запись элементов списка в переменные, используя порядковые номера
-            int x = numList[0];
-            int y = numList[1];
-            int z = numList[2];
-
-            Console.WriteLine(x);
-
         }
     }
 }
