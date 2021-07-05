@@ -15,26 +15,59 @@ namespace Snake
   */
     class Snake : Figure
     {
+        Direction direction;
         public Snake(Point tail, int length, Direction direction)
         {
+            //Конструктор класса Snake
+            this.direction = direction;
+
             for (int i = 0; i < length; i++)
             {
                 //Создание экземпляра класса точка, представляющего хвост змейки
                 Point p = new Point(tail);
                 //Перемещение точки на некоторое расстояние i
-                p.Move(i, direction);
+                p.Clone(i, direction);
                 //Запись перемещенной точки в список
                 pList.Add(p);
             }
         }
         public void Move()
         {
-            //Удалить первую точку списка - хвост
-            Point tail = pList.First();
-            
-            //обратиться к списку
+            //Метод обеспечивает перемещение Змейки на один символ. Сылается на метод CraeteNewHead()
 
-            //Добавить точку в конец списка - создать голову
+            Point head = CraeteNewHead();
+            head.Draw(); // Отрисовать новую голову
+            pList.Add(head); // Добавить точку в конец списка - создать голову
+
+            Point tail = pList[0]; // Узнать параметры хвоста
+            tail.Clear(); // Затереть старый хвост
+            pList.Remove(tail); // Удалить старый хвост
+        }
+
+        public Point CraeteNewHead()
+        {
+            //Вспомогательный метод для Move(). Создает следующую точку при перемещении змейки
+
+            int last = pList.Count - 1; // Узнать количество элементов
+            
+            Point head = pList[last]; // Узнать параметры последнего элемента - головы
+            Point NewHead = new Point(head); // Создать новый экземпляр типа Point, на основе известного экземпляра
+            
+            NewHead.Clone(1, direction); // В зависимости от направления изменить координату точки
+            
+            return NewHead;
+            
+        }
+
+        public void ChangeDir(ConsoleKey key)
+        {
+            // Метод обеспечивает изменение направления движения змейки
+
+            if (key == ConsoleKey.RightArrow) direction = Direction.RIGHT;
+            else if (key == ConsoleKey.LeftArrow) direction = Direction.LEFT;
+            else if(key == ConsoleKey.UpArrow) direction = Direction.UP;
+            else if(key == ConsoleKey.DownArrow) direction = Direction.DOWN;
+
         }
     }
 }

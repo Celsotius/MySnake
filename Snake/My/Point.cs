@@ -25,7 +25,7 @@ namespace Snake
         }
 
        //Метод для сдвигания точки в заданном направлении
-       public void Move(int offset, Direction direction)
+       public void Clone(int offset, Direction direction)
         {
             if (direction == Direction.RIGHT) x += offset;
             else if (direction == Direction.LEFT) x -= offset;
@@ -37,5 +37,11 @@ namespace Snake
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
         }
+        public void Clear()
+        {
+            sym = ' '; // Заменить первый объект
+            Draw(); // Отрисовать новый хвост
+        }
+
     }
 }
