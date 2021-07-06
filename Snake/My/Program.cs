@@ -41,14 +41,15 @@ namespace Snake
                 if (Console.KeyAvailable)
                 {
                     // Получить значение нажатой клавиши и записать в "состояние" key
-                    ConsoleKeyInfo key = Console.ReadKey();
+                    ConsoleKeyInfo key = Console.ReadKey(true);
 
                     // Обращение к методу в экземпляре snake.
                     // Метод получает нажатую клавишу и меняет направление движения змейки.
                     snake.ChangeDir(key.Key);
                 }
-                Thread.Sleep(100); //Задержка
-                snake.Move(); //Движение
+                snake.IsKnock();
+                Thread.Sleep(100); // Задержка
+                snake.Move(); // Движение
             }
         }
     }
