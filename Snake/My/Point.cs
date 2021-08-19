@@ -17,7 +17,7 @@ namespace Snake
             this.sym = sym;
         }
 
-        public Point(Point p) //Конструктор класса вызываемый, при вызове формата Point p = new Point(arg1)
+        public Point(Point p) //Конструктор класса вызываемый при вызове формата Point p = new Point(arg1)
         {
             x = p.x;
             y = p.y;

@@ -72,22 +72,34 @@ namespace Snake
         }
         
         // Обработка столкновения с границей
-        public void IsKnock()
+        // Метод возвращает 1, если есть столкновение и 0, если солкновения нет
+        public bool IsKnock()
         {
             // Получить текущую координату головы и направление
             Point NewPoint = CraeteNextPoint(); // Создать точку перед змейкой
+            bool knock = false;
+            try
+            {
+                // Поставить курсор в точку перед змейкой
+                Console.SetCursorPosition(NewPoint.x, NewPoint.y);
+            }
 
-            // Поставить курсор в точку перед змейкой
-            Console.SetCursorPosition(NewPoint.x, NewPoint.y);
+            catch
+            {
+                // Обработать исключение System.ArgumentOutOfRangeException
+                knock = true;
+            }
 
-            // Считать информацию из установленных координат 
-            //???
+            finally
+            {
+                // Если столкновения не произошло
+            }
 
-            // Проверить, есть ли в новой точке символ границы
-            //???
+            return knock;
+
         }
         
-
+        
     }
 }
  

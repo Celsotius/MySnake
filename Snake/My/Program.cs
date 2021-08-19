@@ -13,18 +13,21 @@ namespace Snake
             int AreaHeigth = 20;
             string lvlName = "LEVEL 1";
 
-            HorizontalLine UpLine = new HorizontalLine(0, AreaLength, 0, '-'); //Создание объекта класса UЛиния
+            Console.SetWindowSize(AreaLength, AreaHeigth);
+            Console.SetBufferSize(AreaLength, AreaHeigth);
+            /*
+            HorizontalLine UpLine = new HorizontalLine(0, AreaLength, 0, '-'); //Создание объекта класса Линия
             UpLine.Draw();
-
+            
             HorizontalLine DownLine = new HorizontalLine(0, AreaLength, AreaHeigth, '-'); //Создание объекта класса Линия
             DownLine.Draw();
-
+            
             VerticalLine LeftLine = new VerticalLine(0, 1, AreaHeigth-1, '|');
             LeftLine.Draw();
 
             VerticalLine RightLine = new VerticalLine(AreaLength, 1, AreaHeigth-1, '|');
             RightLine.Draw();
-
+            */
             //Напись ЛВЛ
             //Console.SetCursorPosition(7, 5);
             //Console.WriteLine(lvlName);
@@ -35,7 +38,9 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
-            // Цикл обеспечивает дивжение змейки, вызывая метод Move с задержкой
+            bool knock;
+            
+                // Цикл обеспечивает дивжение змейки, вызывая метод Move с задержкой
             while (true)
             {
                 if (Console.KeyAvailable)
@@ -47,9 +52,23 @@ namespace Snake
                     // Метод получает нажатую клавишу и меняет направление движения змейки.
                     snake.ChangeDir(key.Key);
                 }
-                snake.IsKnock();
-                Thread.Sleep(100); // Задержка
-                snake.Move(); // Движение
+
+                knock = snake.IsKnock(); // Проверка столкновения
+                
+                if (knock == true)
+                {
+                    Console.SetCursorPosition(AreaLength / 2 - 4, AreaHeigth / 2);
+                    Console.WriteLine("GAME OVER");
+                }
+                else
+                {
+                    Thread.Sleep(100); // Задержка
+                    snake.Move(); // Движение
+                }
+                
+                
+
+                
             }
         }
     }
